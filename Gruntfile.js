@@ -191,8 +191,8 @@ module.exports = function (grunt) {
   }
 
   grunt.registerTask('css', ['clean:css', 'less:dist', 'cssmin:minify']);
-  grunt.registerTask('js', ['clean:js', 'jshint', 'bower_concat', 'browserify:debug', 'exec:uglify', 'copy:dev']);
-  grunt.registerTask('js-release', ['clean:js', 'jshint', 'bower_concat', 'browserify:release', 'exec:uglify', 'copy:dev']);
+  grunt.registerTask('js', ['clean:js', 'jshint', 'karma', 'bower_concat', 'browserify:debug', 'exec:uglify', 'copy:dev']);
+  grunt.registerTask('js-release', ['clean:js', 'jshint', 'karma', 'bower_concat', 'browserify:release', 'exec:uglify', 'copy:dev']);
 
   grunt.registerTask('build', ['css', 'js']);
   grunt.registerTask('build-release', ['css', 'js-release']);

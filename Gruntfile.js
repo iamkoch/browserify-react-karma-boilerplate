@@ -85,7 +85,7 @@ module.exports = function (grunt) {
           paths: ['lib/client/css']
         },
         files: {
-          'lib/css/main.css': 'lib/client/css/main.less'
+          'lib/client/css/main.css': 'lib/client/css/main.less'
         }
       }
     },

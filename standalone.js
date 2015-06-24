@@ -3,14 +3,14 @@
  * This is used to build the bundle with browserify.
  *
  */
-var ReactGooglebot = require('./');
+var SomethingApp = require('./');
 
 if (typeof global.window.define == 'function' && global.window.define.amd) {
-    global.window.define('ReactGooglebot', function () { return ReactGooglebot; });
+    global.window.define('SomethingApp', function () { return SomethingApp; });
 } else if (global.window) {
-    global.window.ReactGooglebot = ReactGooglebot;
+    global.window.SomethingApp = SomethingApp;
 }
 
-var gb = new ReactGooglebot();
+var sa = new SomethingApp();
 
-gb.bootstrap();
+sa.bootstrap();

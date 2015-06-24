@@ -16,9 +16,12 @@ module.exports = function (grunt) {
     bower_concat: {
       all: {
         dest: 'public/js/vendor/vendor.js',
-        cssDest: 'css/vendor.scss',
+        cssDest: 'public/css/vendor/vendor.css',
         dependencies: {},
-        exclude: []
+        exclude: [],
+        mainFiles: {
+          "react": ['react-with-addons.js']
+        }
       }
     },
     env: {
@@ -116,7 +119,7 @@ module.exports = function (grunt) {
     },
     exec: {
       'uglify': {
-        cmd: 'node_modules/.bin/uglifyjs build/application.js  -b beautify=false,ascii_only=true > build/application.min.js',
+        cmd: path.relative('', 'node_modules/.bin/uglifyjs') + ' build/application.js  -b beautify=false,ascii_only=true > build/application.min.js',
         stdout: true,
         stderr: true
       }

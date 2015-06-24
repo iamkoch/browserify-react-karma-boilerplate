@@ -15,9 +15,9 @@ SomethingApp.version = require('package.version');
 
 SomethingApp.prototype = ocreate(EventEmitter.prototype);
 
-SomethingApp.prototype.render = function(elementId) {
+SomethingApp.prototype.bootstrap = function() {
     React.render(
         <App />,
-        document.getElementById(elementId)
+        document.getElementById('body')
     );
 };

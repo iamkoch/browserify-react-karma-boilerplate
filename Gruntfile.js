@@ -66,7 +66,7 @@ module.exports = function (grunt) {
           'build/application.js': ['standalone.js']
         },
         options: {
-          transform: ['reactify', 'brfs', 'packageify', 'browserify-shim']
+          transform: [['babelify', { 'stage': 0 }], 'brfs', 'packageify', 'browserify-shim']
         }
       },
       debug: {
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
             debug: true
           },
           watch: true,
-          transform: ['reactify', 'brfs', 'packageify', 'browserify-shim']
+          transform: [['babelify', { 'stage': 0 }], 'brfs', 'packageify', 'browserify-shim']
         }
       }
     },

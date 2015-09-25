@@ -136,7 +136,7 @@ module.exports = function (grunt) {
     },
     watch: {
       js: {
-        files: ['build/application.js'],
+        files: ['build/application.js', 'build/application.min.js' ],
         tasks: ['copy:dev'],
         options: {
           livereload: true
@@ -152,17 +152,18 @@ module.exports = function (grunt) {
         files: [
           'lib/**/*.less'
         ],
-        tasks: ['build'],
+        tasks: ['build-css'],
         options: {
           livereload: true
         }
       },
       css: {
         files: [
-          'public/css/*.less'
+          'public/css/*.css'
         ],
         tasks: [],
         options: {
+          nospawn: true,
           livereload: true
         }
       },
@@ -198,6 +199,7 @@ module.exports = function (grunt) {
   grunt.registerTask('js-release', ['clean:js', 'jshint', 'karma', 'bower_concat', 'browserify:release', 'exec:uglify', 'copy:dev']);
 
   grunt.registerTask('build', ['css', 'js']);
+  grunt.registerTask('build-css', ['css']);
   grunt.registerTask('build-release', ['css', 'js-release']);
 
   grunt.registerTask('dev', ['env', 'express:dev', 'build', 'watch']);
